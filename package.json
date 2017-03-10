@@ -1,0 +1,22 @@
+{
+  "name": "database-server",
+  "version": "1.0.0",
+  "description": "Tech test to demonstrate my understanding of web technologies",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kateloschinina/database-server-tech-test.git"
+  },
+  "author": "Katerin Loschinina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kateloschinina/database-server-tech-test/issues"
+  },
+  "homepage": "https://github.com/kateloschinina/database-server-tech-test#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
