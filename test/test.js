@@ -45,8 +45,7 @@ describe('User story 1', function() {
 // When it receives a request on http://localhost:4000/get?key=somekey it should return the value stored at somekey
 
 describe('User story 2', function() {
-  it('should return the value stored at somekey', function(done) {
-
+  before(function() {
     app.get('/get', function (req, res) {
       if (ses[req.query.key]) {
         res.send('Message was recieved, stored value is '+ses[req.query.key])
@@ -54,22 +53,15 @@ describe('User story 2', function() {
         res.send('Recheck url parametrs')
       }
     })
-
+  });
+  
+  it('should return the value stored at somekey', function(done) {
     request(app)
     .get('/get?key=somekeyother')
     .expect('Recheck url parametrs', done)
   });
 
   it('should return the value stored at somekey', function(done) {
-
-    app.get('/get', function (req, res) {
-      if (ses[req.query.key]) {
-        res.send('Message was recieved, stored value is '+ses[req.query.key])
-      } else {
-        res.send('Recheck url parametrs')
-      }
-    })
-
     request(app)
     .get('/get?key=somekey')
     .expect('Message was recieved, stored value is somevalue', done)
