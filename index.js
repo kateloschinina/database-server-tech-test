@@ -16,6 +16,6 @@ app.get('/get', function (req, res) {
   }
 })
 
-app.listen(3000, function() {
-  console.log('App is listening on 3000')
+app.listen(4000, function() {
+  console.log('App is listening on 4000')
 })
