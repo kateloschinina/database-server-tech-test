@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-var ses;
+var ses
 
 app.get('/', function (req, res) {
   res.send('This is a landing page')

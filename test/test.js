@@ -2,6 +2,8 @@ var express = require('express')
 var app = express()
 var request = require('supertest')
 
+var ses
+
 // User Story 0
 //
 // Write a program that runs a server that is accessible on http://localhost:4000/
@@ -24,7 +26,19 @@ describe('User story 0', function() {
 //
 // When your server receives a request on http://localhost:4000/set?somekey=somevalue it should store the passed key and value in memory
 
+describe('User story 1', function() {
+  it('should store the passed key and value in memory', function(done) {
 
+    app.get('/set', function (req, res) {
+      ses = req.query
+      res.send('The message has been sent. Please go to http://localhost:4000/get?key=somekey to check whether is was recieved')
+    })
+
+    request(app)
+    .get('/set?somekey=somevalue')
+    .expect('The message has been sent. Please go to http://localhost:4000/get?key=somekey to check whether is was recieved', done)
+  });
+})
 
 // User Story 2
 //
