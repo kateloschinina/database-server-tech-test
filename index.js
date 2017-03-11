@@ -14,7 +14,7 @@ app.get('/set', function (req, res) {
 
 app.get('/get', function (req, res) {
   if (ses[req.query.key]) {
-    res.send('Message was recieved')
+    res.send('Message was recieved, stored value is '+ses[req.query.key])
   } else {
     res.send('Recheck url parametrs')
   }
