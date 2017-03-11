@@ -1,10 +1,9 @@
 var express = require('express')
 var app = express()
-var RedisStore = require('connect-redis')(session)
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
-app.use(session({
-    store: new RedisStore(options)
-}))
+app.use(session({ store: new RedisStore(), secret: '' }));
 
 app.get('/set', function (req, res) {
   req.session = req.query
